@@ -3,6 +3,7 @@ package main
 import (
 	"embed"
 	"github.com/LordCasser/onefile"
+	"github.com/pkg/browser"
 	"io"
 	"io/fs"
 	"log"
@@ -12,6 +13,8 @@ import (
 
 //go:embed static
 var static embed.FS
+
+const Port = "8088"
 
 func main() {
 	err := os.MkdirAll("./resources", 0777)
@@ -25,10 +28,23 @@ func main() {
 	}
 	fsys, _ := fs.Sub(static, "static")
 	handle := onefile.New(fsys, overwrite, "index.html")
+
+	url := "http://localhost:" + Port
+	go func() {
+		err = browser.OpenURL(url)
+		if err != nil {
+			log.Println("browser error:", err)
+		}
+	}()
 	http.Handle("/", handle)
 	http.HandleFunc("/store", storeHandle)
 	http.HandleFunc("/load", loadHandle)
-	_ = http.ListenAndServe(":8080", nil)
+	log.Println("[+]", "server has start", url)
+	err = http.ListenAndServe(":"+Port, handle)
+	if err != nil {
+		log.Println(err)
+	}
+
 }
 
 func storeHandle(w http.ResponseWriter, r *http.Request) {
