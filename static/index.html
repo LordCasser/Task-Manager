@@ -3,9 +3,9 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Task-Manager</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.css">
-    <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-date-picker.css">
     <link rel="stylesheet" type="text/css" href="./dist/tui-calendar.css">
     <link rel="stylesheet" type="text/css" href="./css/default.css">
     <link rel="stylesheet" type="text/css" href="./css/icons.css">
@@ -15,6 +15,7 @@
         <!-- <a href="https://github.com/nhn/tui.calendar">
             <img src="./images/img-bi.png" srcset="./images/img-bi@2x.png 2x,./images/img-bi@3x.png 3x">
         </a> -->
+        <span style="font-size: 16px;font-weight:bolder;">Task-Manager</span>
     </div>
     <div id="lnb">
         <div class="lnb-new-schedule">
@@ -33,9 +34,6 @@
             </div>
             <div id="calendarList" class="lnb-calendars-d1">
             </div>
-        </div>
-        <div class="lnb-footer">
-            © NHN Corp.
         </div>
     </div>
     <div id="right">
@@ -108,14 +106,13 @@
         <div id="calendar"></div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="https://uicdn.toast.com/tui.code-snippet/v1.5.2/tui-code-snippet.min.js"></script>
-    <script src="https://uicdn.toast.com/tui.time-picker/v2.0.3/tui-time-picker.min.js"></script>
-    <script src="https://uicdn.toast.com/tui.date-picker/v4.0.3/tui-date-picker.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chance/1.0.13/chance.min.js"></script>
+    <script src="./js/component/jquery-3.2.1.slim.min.js"></script>
+    <script src="./js/component/bootstrap.min.js"></script>
+    <script src="./js/component/tui-code-snippet.min.js"></script>
+    <script src="./js/component/tui-time-picker.min.js"></script>
+    <script src="./js/component/tui-date-picker.min.js"></script>
+    <script src="./js/component/moment.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chance/1.0.13/chance.min.js"></script> -->
     <script src="./dist/tui-calendar.js"></script>
     <script src="./js/data/calendars.js"></script>
     <script src="./js/data/schedules.js"></script>

@@ -55,25 +55,25 @@ function hexToRGBA(hex) {
     calendar.borderColor = '#9e5fff';
     addCalendar(calendar);
 
-    // calendar = new CalendarInfo();
-    // id += 1;
-    // calendar.id = String(id);
-    // calendar.name = 'Company';
-    // calendar.color = '#ffffff';
-    // calendar.bgColor = '#00a9ff';
-    // calendar.dragBgColor = '#00a9ff';
-    // calendar.borderColor = '#00a9ff';
-    // addCalendar(calendar);
+    calendar = new CalendarInfo();
+    id += 1;
+    calendar.id = String(id);
+    calendar.name = '技术开发';
+    calendar.color = '#ffffff';
+    calendar.bgColor = '#00a9ff';
+    calendar.dragBgColor = '#00a9ff';
+    calendar.borderColor = '#00a9ff';
+    addCalendar(calendar);
 
-    // calendar = new CalendarInfo();
-    // id += 1;
-    // calendar.id = String(id);
-    // calendar.name = 'Family';
-    // calendar.color = '#ffffff';
-    // calendar.bgColor = '#ff5583';
-    // calendar.dragBgColor = '#ff5583';
-    // calendar.borderColor = '#ff5583';
-    // addCalendar(calendar);
+    calendar = new CalendarInfo();
+    id += 1;
+    calendar.id = String(id);
+    calendar.name = 'HWS';
+    calendar.color = '#ffffff';
+    calendar.bgColor = '#ff5583';
+    calendar.dragBgColor = '#ff5583';
+    calendar.borderColor = '#ff5583';
+    addCalendar(calendar);
 
     // calendar = new CalendarInfo();
     // id += 1;
