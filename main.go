@@ -50,10 +50,10 @@ func main() {
 	http.HandleFunc("/store", storeHandle)
 	http.HandleFunc("/load", loadHandle)
 	log.Println("[+]", "server has start", url)
-	err = http.ListenAndServe(":"+Port, nil)
-	if err != nil {
-		log.Println(err)
-	}
+	_ = http.ListenAndServe(":"+Port, nil)
+	//if err != nil {
+	//	log.Println(err)
+	//}
 
 }
 
