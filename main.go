@@ -2,22 +2,32 @@ package main
 
 import (
 	"embed"
-	"github.com/LordCasser/onefile"
-	"github.com/pkg/browser"
 	"io"
 	"io/fs"
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/LordCasser/onefile"
+	"github.com/pkg/browser"
 )
 
 //go:embed static
 var static embed.FS
 
 const Port = "8088"
+const StorePath = "./resources/data.json"
 
 func main() {
 	err := os.MkdirAll("./resources", 0777)
+	//file, err := os.Open(StorePath)
+	//defer func() { file.Close() }()
+	//if err != nil && os.IsNotExist(err) {
+	//	file, err = os.Create(StorePath)
+	//	if err != nil {
+	//		log.Panicln("create data file error", err)
+	//	}
+	//}
 	if err != nil {
 		log.Println(err)
 		return
@@ -40,7 +50,7 @@ func main() {
 	http.HandleFunc("/store", storeHandle)
 	http.HandleFunc("/load", loadHandle)
 	log.Println("[+]", "server has start", url)
-	err = http.ListenAndServe(":"+Port, handle)
+	err = http.ListenAndServe(":"+Port, nil)
 	if err != nil {
 		log.Println(err)
 	}

@@ -326,8 +326,8 @@
       },
       body: JSON.stringify(data), // body data type must match "Content-Type" header
     });
-    if(response.status != 200){
-        alert("store error!")
+    if (response.status != 200) {
+      alert("store error!");
     }
 
     // console.log("store");
@@ -455,19 +455,18 @@
   async function setSchedules() {
     cal.clear();
     // generateSchedule(cal.getViewName(), cal.getDateRangeStart(), cal.getDateRangeEnd());
-   const response =  await fetch("/load");
-   let data = await response.json();
-//    console.log(data);
-    
-    for( let item of data){
-        item.start = item.start._date
-        item.end = item.end._date
+    const response = await fetch("/load");
+    let data = await response.json();
+      //  console.log(data);
+
+    for (let item of data) {
+      item.start = item.start._date;
+      item.end = item.end._date;
     }
-    
-   cal.createSchedules(data);
+
+    cal.createSchedules(data);
 
     refreshScheduleVisibility();
-
   }
 
   function setEventListener() {
